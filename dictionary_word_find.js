@@ -24,7 +24,7 @@ const findDefinitionOf = (dict, word) => {
 }
 
 const findDefinitionOf = (dict, word) => {
-  const def = dict.filter(entry => entry.startsWith(word));
+  const def = dict.filter(entry => entry.startsWith(word + ' -'));
   if (!def) return;
   return def.slice(word.length + 3);
 }
