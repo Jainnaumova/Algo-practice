@@ -59,3 +59,24 @@ const findDefinitionOf = (dict, word) => {
 // definitionOf('that', dictionary); // should return 'Used to identify a specific person or thing observed or heard by the speaker'
 // definitionOf('to', dictionary); // should return 'Expressing motion in the direction of (a particular location)'
 // definitionOf('wizbing', dictionary); // should return undefined
+
+// Solution Using HashMap
+const cashe = new Map();
+const findOrCreateHash = dict => {
+  if (cashe.has(dict)) return cashe.get(dict);
+  let hashMap = {};
+  dict.forEach(entry => {
+    const [word, definition] = entry.split(' - ');
+    hashMap[word] = definition;
+  })
+  cashe.set(dict, hashMap);
+  return hashMap;
+}
+
+const findDefinitionOf = (word, dict) => {
+  const newHash = findOrCreateHash(dict);
+  return newHash[word];
+}
+
+findDefinitionOf('that', dictionary); // should return 'Used to identify a specific person or thing observed or heard by the speaker'
+// The further-optimized precomputed hash map solution, `O(n)` time for the first run, `O(1)` for every subsequent run (AKA `O(n)` "pre-processing time"), and `O(n)` space:
