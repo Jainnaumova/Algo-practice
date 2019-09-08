@@ -29,3 +29,21 @@ const getIntersection = (arr1, arr2) => {
 
 getIntersection([1,2,3,4,5], [2,3,4,8,9,0]) // return [2,3,4]
 // runtime O(n*m)
+
+//reverse array
+const reverseArray = arr => {
+  for (let leftIdx = 0; leftIdx < arr.length / 2; leftIdx++) {
+    const rigthIdx = arr.length - 1 - leftIdx;
+    const left = arr[leftIdx];
+    const rigth = arr[rigthIdx];
+    arr[rigthIdx] = left;
+    arr[leftIdx] = rigth;
+  }
+  return arr;
+}
+
+reverseArray([1,2,3,4,5])
+// runtime O(n)
+// O(n) time
+// O(1) extra space
+// (O(n) total space)
