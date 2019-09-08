@@ -47,3 +47,32 @@ reverseArray([1,2,3,4,5])
 // O(n) time
 // O(1) extra space
 // (O(n) total space)
+
+// concat arrays
+const mergeArrays = (arrA, arrB) => {
+  let mergedArr = [];
+  arrA.forEach(el => mergedArr.push(el));
+  arrB.forEach(el => mergedArr.push(el));
+  return mergedArr;
+}
+
+mergeArrays([1,2,3], [2,3,4,5])
+// O(n + m) time
+// O(n + m) space
+
+// print power of 2 upto number
+const printPowerOfTwo = num => {
+  for (let i = 1; i <= num; i*=2) {
+    console.log(i)
+  }
+}
+
+printPowerOfTwo(12)
+// O(log(n))
+
+// get fibonachi
+const findFibonachi = num => (num === 0 || num === 1) ? 1 : findFibonachi(num-1) + findFibonachi(num-2)
+
+findFibonachi(5) // 8
+// O(2^n) time
+// O(n) space
