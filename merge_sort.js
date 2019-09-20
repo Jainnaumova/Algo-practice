@@ -8,16 +8,16 @@ const mergeSort = arr => {
 
 const merge = (arrLeft, arrRight) => {
   let result = [];
-  while (arrLeft.length > 0 && arrRight.length > ) {
+  while (arrLeft.length && arrRight.length) {
     let el;
     if (arrLeft[0] < arrRight[0]) {
-      el = arrLeft[0];
+      el = arrLeft.shift();
     } else {
-      el = arrRight[0];
+      el = arrRight.shift();
     }
     result.push(el);
   }
-  return result.concat(arrLeft.length ? arrLeft : arrRight);
+  return result.concat(arrLeft.length ? arrLeft[0] : arrRight[0]);
 }
 
 mergeSort([2,5,6,10,11,3,15]) // return [ 2, 3, 5, 6, 10, 11, 15 ]  n*log(n)
