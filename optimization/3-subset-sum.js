@@ -14,7 +14,6 @@ const subsetSum = (target, arr) => {
   const possibleSums = new Set([0]);
   for (let num of arr) {
     // copy the current set of possibilities so that we loop down it without the set changing right from under our feet
-    const currentPossibleSums = new Set(possibleSums);
     const currentPosibleSums = new Set(possibleSums);
     for (let sum of currentPosibleSums) {
       // add each possible sum to each number in the original array of numbers

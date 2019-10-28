@@ -56,6 +56,15 @@ const mergeArrays = (arrA, arrB) => {
   return mergedArr;
 }
 
+// merge arrays and return unique values using Set
+const mergeArr = (arrA, arrB) => {
+  let mergedArr = [];
+  arrA.forEach(el => mergedArr.push(el));
+  arrB.forEach(el => mergedArr.push(el));
+  const newArr = new Set(mergedArr); // to avoid duplicates
+  return [...newArr];
+}
+
 mergeArrays([1,2,3], [2,3,4,5])
 // O(n + m) time
 // O(n + m) space

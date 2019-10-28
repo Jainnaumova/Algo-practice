@@ -33,6 +33,12 @@ const removeDuplicates = arr => {
   return index + 1;
 }
 
+// using Set
+const removeDuplicates = arr => {
+  const arrSet = new Set(arr); // Set doesnt allow to put duplicates
+  return Array.from(arrSet);
+}
+
 // arr = [ 1, 2, 3, 4, 5, 2, 2, 3, 4, 4, 5 ]
 // Big O (n)
 

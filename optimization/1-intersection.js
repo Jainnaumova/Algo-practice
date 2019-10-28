@@ -23,4 +23,11 @@ const intersection = (arrA, arrB) => {
   return shared;
 }
 
+const intersection = (arrA, arrB) => {
+  const setA = new Set(arrA);
+  const setB = new Set(arrB);
+  const intersection = [...setA].filter(value => setB.has(value));
+  return Array.from(intersection);
+}
+
 `O(n+m)` time complexity

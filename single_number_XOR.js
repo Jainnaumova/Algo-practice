@@ -23,3 +23,33 @@ const findSingle = nums => {
 }
 
 // Time complexity of this solution is O(n) and it requires O(n) extra space.
+
+const findSingle = nums => {
+  let myMap = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (!myMap.has(nums[i])) {
+      myMap.set(nums[i], 1);
+    } else {
+      myMap.set(nums[i], 2)
+    }
+  }
+  for (let [key, value] of myMap.entries()) {
+    if (value === 1) {
+      return key;
+    }
+  }
+}
+
+const findSingle = nums => {
+  let myMap = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (!myMap.has(nums[i])) {
+      myMap.set(nums[i], 1);
+    } else {
+      myMap.delete(nums[i]);
+    }
+  }
+  for (let [key, value] of myMap.entries()) {
+    return key;
+  }
+}

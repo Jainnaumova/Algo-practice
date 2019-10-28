@@ -5,13 +5,13 @@ class Queue {
     this.tail = 0;
   }
 
-  add(item) {
+  addToTail(item) {
     this.memory[this.tail] = item;
     this.tail++;
     return this; // return all Queue
   }
 
-  remove() {
+  removeFromHead() {
     if (this.head === this.tail) {
       return undefined;
     } else {

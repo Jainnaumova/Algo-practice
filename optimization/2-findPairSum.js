@@ -17,4 +17,21 @@ const findPairSum = (arr, target) => {
   return false;
 }
 
+// using Set
+const findPairSum = (arr, target) => {
+  let setDif = new Set();
+  for (let i = 0; i < arr.length; i++) {
+    if (!setDif.has(arr[i])) {
+      setDif.add(arr[i]);
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (setDif.has(target - arr[i])) {
+      return true;
+    }
+    return false;
+  }
+
+}
+
 // O(n) time, O(1) extra space
